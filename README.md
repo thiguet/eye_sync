@@ -1,4 +1,7 @@
-# eye_sync
+# Eye Sync
+
+## About 
+Eye Sync is a project built with VueJS to display Eye Sync's data to a final user. 
 
 ## Project setup
 ```
@@ -24,6 +27,3 @@ npm run test
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
