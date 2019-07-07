@@ -1,42 +1,46 @@
+<style scoped>
+    .footer {
+        width: 100%;
+    }
+</style>
+
 <template>
     <div class="products-wrapper">
         <article>
-            <table class="products-list">
-                <thead>
-                    <tr>
-                        <td>Código</td>
-                        <td>Nome</td>
-                        <td>Preço</td>
-                    </tr>
-                </thead>
-                <!-- <hr /> -->
-                <tbody>
-                    <tr>
-                        <td>asdasd</td>
-                    </tr>
-                </tbody>
-            </table>
+            <custom-table :rows="rows"
+                          :cols="cols">
+            </custom-table>
         </article>
         <footer class="footer">
             <div class="footer-container">
-                <button>Add</button> 
+                <button class="custom-button">Add</button> 
             </div>
         </footer>
     </div>
 </template>
 
 <script>
+import CustomTable from '@/components/CustomTable.vue';
+
+const cols = ["Código", "Nome", "Preço"];
+const rows = [[123, 'asd', 'asd']];
+
 export default {
-    name: "products"
+    name: "products",
+    components: {
+        CustomTable
+    },
+    data() {
+        return ({
+            rows,
+            cols
+        })
+    }
 }
 </script>
 
 <style>
-    .footer {
-        width: 100%;
-    }
-
-    button {
+    .custom-button {
         font-size: 14px;
         outline: none;
         border: none;
@@ -47,24 +51,7 @@ export default {
         cursor: pointer;
     }
 
-    button:hover {
-        transform: translateY(4px);
+    .custom-button:focus {
+        transform: translateY(6px);
     }   
-    .products-list {
-        border: none;
-        padding: 10px;
-        table-layout: fixed;
-        width: 100%;
-        margin-bottom : 20px;
-    }
-
-    .products-list thead tr td {
-        font-weight: 800;
-        font-size: 18px;
-        padding: 10px 0px;
-    }
-
-    .products-list hr {
-        width: 300%;  
-    }
 </style>

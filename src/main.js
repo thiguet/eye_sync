@@ -7,6 +7,7 @@ import routes from "@/routes.js";
 Vue.config.productionTip = false
 
 const router = new Router({
+  linkExactActiveClass: 'active-link',
   routes
 })
 

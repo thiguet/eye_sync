@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header :routes="routes" />
+    <custom-header :routes="routes" />
     <div class="app-wrapper">
       <transition name="fade" mode="out-in">
         <router-view />
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Header from "@/components/Header.vue";
+import CustomHeader from "@/components/CustomHeader.vue";
 import Products from "@/components/Products.vue";
 
 import routes from "@/routes.js";
@@ -18,8 +18,7 @@ import routes from "@/routes.js";
 export default {
   name: 'app',
   components: {
-    Header,
-    Products
+    CustomHeader
   },
   data() {
     return ({
