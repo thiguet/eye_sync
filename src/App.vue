@@ -11,7 +11,6 @@
 
 <script>
 import CustomHeader from "@/components/CustomHeader.vue";
-import Products from "@/components/Products.vue";
 
 import routes from "@/routes.js";
 

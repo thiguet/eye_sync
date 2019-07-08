@@ -5,9 +5,9 @@
             <nav>
                 <ul class="ch-list">
                     <li class="ch-list-item"
-                        v-for="route in routes"
+                        v-for="route in getVisibleRoutes(routes)"
                         :key="route.name">
-                        <router-link class="ch-router-link" :to="route.path">
+                        <router-link class="router-link" :to="route.path">
                             {{ route.label }}
                         </router-link>
                     </li>
@@ -25,6 +25,11 @@ export default {
         routes: {
             type: Array,
             required: true
+        }
+    },
+    methods: {
+        getVisibleRoutes(routes) {
+            return routes.filter( route => route.visibleOnMenu)
         }
     }
 }
@@ -50,7 +55,7 @@ export default {
         display: inline-block;
     }
     
-    .ch-router-link {
+    .router-link {
         padding: 10px;
         text-decoration: none;
         color: inherit;

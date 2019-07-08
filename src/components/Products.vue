@@ -13,7 +13,7 @@
         </article>
         <footer class="footer">
             <div class="footer-container">
-                <button class="custom-button">Add</button> 
+                <router-link to="/new-product" class="router-link custom-button">Add</router-link> 
             </div>
         </footer>
     </div>
@@ -46,7 +46,7 @@ export default {
         border: none;
         padding: 10px 15px;
         border-radius: 100px;  
-        background-color: rgba(250,150,150, 1);
+        background-color: rgb(253, 110, 110);
         color: white;
         cursor: pointer;
     }
