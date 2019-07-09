@@ -23,7 +23,7 @@
 import CustomTable from '@/components/CustomTable.vue';
 import { AWSProfiles } from '@/mocks/AWSProfiles.js'; 
 
-const cols = ["Nome Foto", "Faixa Etária", "Gênero"];
+const cols = ["Código", "Faixa Etária", "Gênero"];
 
 export default {
     name: "products",
@@ -32,7 +32,11 @@ export default {
     },
     data() {
         return ({
-            rows: AWSProfiles.map(line => [line.Face.ExternalImageId, line.FaceDetail.AgeRange.Low +  ' a ' + line.FaceDetail.AgeRange.High + ' anos', line.FaceDetail.Gender.Value]),
+            rows: window.photosList.map((line, i) => {
+                const FaceDetail = line.FaceDetails[0];
+                console.log(FaceDetail.AgeRange.Low +  ' a ' + FaceDetail.AgeRange.High + ' anos', FaceDetail.Gender.Value);
+                return [i, FaceDetail.AgeRange.Low +  ' a ' + FaceDetail.AgeRange.High + ' anos', FaceDetail.Gender.Value]
+            }),
             cols
         })
     }

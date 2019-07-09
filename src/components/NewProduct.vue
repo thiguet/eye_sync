@@ -1,5 +1,5 @@
 <template>
-    <form v-on:submit="saveProduct" action="#" >
+    <form action="#" >
         <div class="input-container">
             <label>
                 <span>Nome</span>
@@ -12,7 +12,7 @@
                 <input class="text-field" type="text" v-model="preco" required />
             </label>
         </div>
-        <button class="custom-button" type="submit">Salvar</button>
+        <button class="custom-button" type="button" v-on:click="saveProduct">Salvar</button>
     </form>
 </template>
 
