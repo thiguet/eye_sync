@@ -1,7 +1,6 @@
 const ProductsMock = [  
-    "Linguicinha de Pernil",
+    "Linguiça de Pernil",
     "Coca Cola 200 ML Zero",
-    "Refil de Refrigerante",
     "Hamburguer de Picanha",
     "Salada Light",
     "Tropeirão Veggie"
@@ -15,7 +14,7 @@ const faixas = [
     },
     {
         label: 'Feminino',
-        backgroundColor: '#f87900',
+        backgroundColor: '#387900',
         data: [20, 40, 50, 10, 2, 3] 
     }
 ];

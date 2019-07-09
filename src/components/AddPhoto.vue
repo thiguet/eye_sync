@@ -1,6 +1,7 @@
 <style>
   .img-container {
     width: 100%;
+    margin-top: 130px;
   }
   #fileInput {
       display: none;
@@ -46,15 +47,15 @@ export default {
     name: 'AddPhoto',
     data() {
         return {
-        msg: "Vue Image Upload and Resize Demo",
-        hasImage: false,
-        image: null
+          hasImage: false,
+          image: null
         };
     },
     methods: {
         setImage: function(output) {
-        this.hasImage = true;
-        this.image = output;
+          this.hasImage = true;
+          this.image = output;
+          // console.log(this.image.dataUrl);
         }
     }
 }

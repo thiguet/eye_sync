@@ -9,8 +9,8 @@
 <script>
 import CustomTable from '@/components/CustomTable.vue';
 
-const cols = [ "Código", "Produto"],
-      rows = [ [0, 'Produto Teste'], [1, 'Batata']];
+const cols = [ "Código", "Produto", "Preço"],
+      rows = window.rows.slice(0, 3);
 
 export default {
     name: "sugestions",

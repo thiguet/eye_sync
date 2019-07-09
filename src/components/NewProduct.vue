@@ -31,18 +31,27 @@ export default {
     },
     methods: {
         saveProduct: function () {
-            const data = {
-                nome: this.nome,
-                preco: this.preco
-            }; 
+            let preco
 
-            fetch('http://localhost:8001/addProduct', 
-                { 
-                    method: 'POST',
-                    mode: 'cors',
-                    cache: 'default',
-                    body: data
-                }).then();
+            try {
+                preco = parseFloat(this.preco.trim());
+                if(Number.isNaN(preco))
+                    throw preco;
+                else {
+                    const data = [
+                        window.rows.slice(-1,)[0][0]+1,
+                        this.nome,
+                        preco
+                    ]; 
+
+                    const aux = window.rows.slice(0);
+                    aux.push(data);
+                    window.rows = aux;
+                    alert('Produto adicionado com sucesso !');
+                }
+            } catch(e) {
+                alert('Favor digitar um preço válido !');
+            }
         }
     }
 }
@@ -61,7 +70,7 @@ export default {
 
 .text-field {
     border: none;
-    border-bottom: 1px solid #f87979;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
     outline: none;
     font-size: 16px;
     color: inherit;

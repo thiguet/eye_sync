@@ -21,15 +21,9 @@
 
 <script>
 import CustomTable from '@/components/CustomTable.vue';
+import { AWSProfiles } from '@/mocks/AWSProfiles.js'; 
 
-const cols = ["Código", "Nome", "Preço"];
-window.rows = [
-    [1, "Linguicinha de Pernil", '4.5'],
-    [2, "Coca Cola 200 ML Zero", '13.5'],
-    [3, "Hamburguer de Picanha", '7.8'],
-    [4, "Salada Light", '12.9'],
-    [5, "Tropeirão Veggie", '12.9'],   
-];
+const cols = ["Nome Foto", "Faixa Etária", "Gênero"];
 
 export default {
     name: "products",
@@ -38,7 +32,7 @@ export default {
     },
     data() {
         return ({
-            rows: window.rows,
+            rows: AWSProfiles.map(line => [line.Face.ExternalImageId, line.FaceDetail.AgeRange.Low +  ' a ' + line.FaceDetail.AgeRange.High + ' anos', line.FaceDetail.Gender.Value]),
             cols
         })
     }

@@ -3,7 +3,7 @@
     <table class="ct">
         <thead>
             <tr>
-                <td class="ct-cols" 
+                <td class="ct-col" 
                     v-for="(col, i) in cols"
                     :key="i">
                     {{ col }}
@@ -11,7 +11,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="(row, j) in rows"
+            <tr class="ct-row" v-for="(row, j) in rows"
                 :key="j">
                 <td v-for="(element, k) in row"
                     :key="k">
@@ -37,7 +37,7 @@ export default {
 </script>
 
 <style>
-  .ct {
+    .ct {
         border: none;
         padding: 10px;
         table-layout: fixed;
@@ -45,9 +45,21 @@ export default {
         margin-bottom : 20px;
     }
 
-    .ct-cols {
+    .ct-col {
         font-weight: 800;
         font-size: 18px;
         padding: 10px 0px;
+    }
+    .ct-row {
+        height: 40px;
+    }
+    .ct tr:first-child {
+        margin-top: 200px; 
+        height: 40px;
+    }
+    .ct tbody::before {
+        content: '';
+        display: block;
+        height: 10px;
     }
 </style>

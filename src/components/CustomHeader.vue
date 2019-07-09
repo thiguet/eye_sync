@@ -43,6 +43,7 @@ export default {
     .ch-container {
         width: 90%;
         margin-left: 5%;
+        height: 50px;
         border-bottom: 1px solid rgba(0,0,0,0.2);
     }
 
