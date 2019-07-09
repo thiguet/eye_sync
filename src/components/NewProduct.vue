@@ -17,7 +17,6 @@
 </template>
 
 <script>
-import { SERVER_URL } from '@/config.js';  
 
 const nome = '',
       preco = '';
@@ -31,7 +30,7 @@ export default {
         };
     },
     methods: {
-        saveProduct: function (event) {
+        saveProduct: function () {
             const data = {
                 nome: this.nome,
                 preco: this.preco
