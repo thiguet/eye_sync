@@ -4,8 +4,7 @@
             <div class="chart-container">
                 <bar-chart
                     :data="ProductsByAge.data"
-                    :options="ProductsByAge.options"
-                    chartName="Teste" >
+                    :options="ProductsByAge.options">
                 </bar-chart>
             </div>
         </div>
@@ -13,8 +12,23 @@
             <div class="chart-container">
                 <bar-chart
                     :data="ProductsByGender.data"
-                    :options="ProductsByGender.options"
-                    chartName="Teste" >
+                    :options="ProductsByGender.options">
+                </bar-chart>
+            </div>
+        </div>
+        <div class="grid-row">
+            <div class="chart-container">
+                <bar-chart
+                    :data="ProductsByAge.data"
+                    :options="ProductsByAge.options">
+                </bar-chart>
+            </div>
+        </div>
+        <div class="grid-row">
+            <div class="chart-container">
+                <bar-chart
+                    :data="ProductsByGender.data"
+                    :options="ProductsByGender.options">
                 </bar-chart>
             </div>
         </div>

@@ -2,6 +2,7 @@ import Products from "@/components/Products.vue";
 import Home from "@/components/Home.vue";
 import Sugestions from "@/components/Sugestions.vue";
 import NewProduct from "@/components/NewProduct.vue";
+import AddPhoto from "@/components/AddPhoto.vue";
 
 const routes = [
     {
@@ -31,7 +32,14 @@ const routes = [
         label: "Produto",
         component: NewProduct,
         visibleOnMenu: false
-    }
+    },
+    {
+        name: "new-picture",
+        path: "/new-picture",
+        label: "Nova Foto",
+        component: AddPhoto,
+        visibleOnMenu: true
+    },
 ];
 
 export default routes;

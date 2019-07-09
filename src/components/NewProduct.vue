@@ -44,8 +44,6 @@ export default {
                     cache: 'default',
                     body: data
                 }).then();
-            
-            console.log(this.nome);
         }
     }
 }

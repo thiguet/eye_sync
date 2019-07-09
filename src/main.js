@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import ImageUploader from 'vue-image-upload-resize'
 import App from './App.vue'
 
 import routes from "@/routes.js";
@@ -11,6 +12,8 @@ const router = new Router({
   routes
 })
 
+// Global Dependencies
+Vue.use(ImageUploader);
 Vue.use(Router)
 
 new Vue({
