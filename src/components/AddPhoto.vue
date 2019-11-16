@@ -59,7 +59,6 @@ export default {
           this.hasImage = true;
           this.image = output;
           this.DetectFaces();
-          // console.log(this.image.dataUrl);
         },
         //Calls DetectFaces API and shows estimated ages of detected faces
         DetectFaces: function() {
@@ -91,8 +90,7 @@ export default {
             ]
           };
           rekognition.detectFaces(params, function (err, data) {
-            if (err) console.log(err, err.stack); // an error occurred
-            else {
+            if (!err) {
               window.photosList = window.photosList.concat(data);
               this.lowAge = data.FaceDetails[0].AgeRange.Low;
               this.highAge = data.FaceDetails[0].AgeRange.High;
@@ -112,9 +110,9 @@ export default {
         // Make the call to obtain credentials
         window.AWS.config.credentials.get(function () {
           // Credentials will be available when this function is called.
-          var accessKeyId = window.AWS.config.credentials.accessKeyId;
-          var secretAccessKey = window.AWS.config.credentials.secretAccessKey;
-          var sessionToken = window.AWS.config.credentials.sessionToken;
+          window.accessKeyId = window.AWS.config.credentials.accessKeyId;
+          window.secretAccessKey = window.AWS.config.credentials.secretAccessKey;
+          window.sessionToken = window.AWS.config.credentials.sessionToken;
         });
       }
 

@@ -21,7 +21,6 @@
 
 <script>
 import CustomTable from '@/components/CustomTable.vue';
-import { AWSProfiles } from '@/mocks/AWSProfiles.js'; 
 
 const cols = ["Código", "Faixa Etária", "Gênero"];
 
@@ -34,11 +33,10 @@ export default {
         return ({
             rows: window.photosList.map((line, i) => {
                 const FaceDetail = line.FaceDetails[0];
-                console.log(FaceDetail.AgeRange.Low +  ' a ' + FaceDetail.AgeRange.High + ' anos', FaceDetail.Gender.Value);
                 return [i, FaceDetail.AgeRange.Low +  ' a ' + FaceDetail.AgeRange.High + ' anos', FaceDetail.Gender.Value]
             }),
             cols
-        })
+        });
     }
 }
 </script>
